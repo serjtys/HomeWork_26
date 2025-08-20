@@ -1,0 +1,16 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+    <div class="form-container text-center">
+        <h2 class="page-title mb-4">Удаление товара</h2>
+        <p>Вы уверены, что хотите удалить "{{ product.name }}"?</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <button type="submit" class="btn btn-danger btn-hover">Да, удалить</button>
+                <a href="{% url 'product_list' %}" class="btn btn-outline-secondary">Отмена</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
